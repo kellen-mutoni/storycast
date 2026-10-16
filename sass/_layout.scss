@@ -1,0 +1,74 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "spacing" as *;
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: $space-medium;
+  padding: $space-small $space-medium;
+  background: $color-black;
+  color: $color-cream;
+
+  &:focus {
+    top: $space-medium;
+  }
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-medium;
+  padding: $space-medium $space-large;
+  border-bottom: 1px solid $color-black;
+}
+
+.site-header__logo {
+  padding: $space-small $space-medium;
+  background: $color-black;
+  color: $color-cream;
+  font-family: $font-heading;
+  font-size: $font-size-large;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: $space-small;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  display: block;
+  padding: $space-small $space-medium;
+  text-decoration: none;
+
+  &[aria-current="page"] {
+    background: $color-black;
+    color: $color-cream;
+  }
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-medium;
+  padding: $space-large;
+  background: $color-black;
+  color: $color-cream;
+
+  :focus-visible {
+    outline-color: $color-cream;
+  }
+}
+
+.site-footer__name,
+.site-footer__copy {
+  margin: 0;
+}

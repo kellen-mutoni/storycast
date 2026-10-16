@@ -1,0 +1,48 @@
+@use "sass:meta";
+@use "colors" as *;
+@use "typography" as *;
+@use "spacing" as *;
+
+@layer base, layout, components;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: $color-cream;
+    color: $color-black;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: $font-heading;
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid $color-olive;
+    outline-offset: 3px;
+  }
+}
+
+@layer layout {
+  @include meta.load-css("layout");
+}
+
+@layer components {
+  @include meta.load-css("components");
+  @include meta.load-css("pages");
+}

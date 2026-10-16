@@ -1,0 +1,130 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "spacing" as *;
+
+.story {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: $space-large;
+}
+
+.story__title {
+  margin: 0 0 $space-medium;
+  font-size: $font-size-title;
+}
+
+.story__media {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.story__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: $color-black;
+}
+
+.story__caption {
+  padding: $space-medium;
+  background: $color-black;
+  color: $color-cream;
+}
+
+.audio {
+  margin-top: $space-large;
+  padding: $space-medium;
+  background: $color-olive;
+  color: $color-cream;
+
+  :focus-visible {
+    outline-color: $color-cream;
+  }
+}
+
+.audio__title {
+  margin: 0 0 $space-small;
+}
+
+.audio__player {
+  width: 100%;
+}
+
+.transcript {
+  margin-top: $space-large;
+}
+
+.transcript__title {
+  margin: 0 0 $space-medium;
+}
+
+.transcript__list {
+  margin: 0;
+  padding: 0;
+  border: 2px solid $color-black;
+  list-style: none;
+}
+
+.transcript__line {
+  padding: $space-small $space-medium;
+  border-bottom: 1px solid $color-black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.transcript__time {
+  margin-right: $space-small;
+  color: $color-olive;
+  font-weight: 700;
+}
+
+.features {
+  padding: $space-large;
+}
+
+.features__title {
+  margin: 0 0 $space-medium;
+}
+
+.features__list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid $color-black;
+  list-style: none;
+}
+
+.features__item {
+  padding: $space-medium 0;
+  border-bottom: 1px solid $color-black;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: $space-medium;
+    background: $color-olive;
+  }
+}
+
+.engage {
+  margin: 0 $space-large $space-large;
+  padding: $space-large;
+  background: $color-olive;
+  color: $color-cream;
+
+  :focus-visible {
+    outline-color: $color-cream;
+  }
+}
+
+.engage__title {
+  margin: 0 0 $space-small;
+}
+
+.engage__text {
+  margin: 0 0 $space-medium;
+}

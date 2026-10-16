@@ -1,0 +1,95 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "spacing" as *;
+
+.hero {
+  padding: $space-xlarge $space-large;
+  background: $color-black;
+  color: $color-cream;
+
+  :focus-visible {
+    outline-color: $color-cream;
+  }
+}
+
+.hero__title {
+  margin: 0 0 $space-medium;
+  font-size: $font-size-title;
+}
+
+.hero__text {
+  max-width: 40rem;
+  margin: 0 0 $space-large;
+}
+
+.button {
+  display: inline-block;
+  padding: $space-small $space-large;
+  border: 2px solid $color-cream;
+  background: $color-olive;
+  color: $color-cream;
+  text-decoration: none;
+
+  &:hover {
+    background: $color-cream;
+    color: $color-black;
+  }
+}
+
+.featured,
+.related {
+  padding: $space-large;
+}
+
+.featured__title,
+.related__title {
+  margin: 0 0 $space-medium;
+}
+
+.featured__list,
+.related__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: $space-large;
+}
+
+.card {
+  container: card / inline-size;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: $space-medium;
+  padding: $space-medium;
+  border: 2px solid $color-black;
+}
+
+.card__meta,
+.card__title,
+.card__link {
+  grid-column: 1 / -1;
+}
+
+.card__meta {
+  margin: 0 0 $space-small;
+}
+
+.card__title {
+  margin: 0 0 $space-medium;
+  font-size: $font-size-large;
+}
+
+.card--soon {
+  background: $color-olive;
+  color: $color-cream;
+}
+@container card (min-width: 25rem) {
+  .card__meta,
+  .card__title {
+    grid-column: 1;
+  }
+
+  .card__link {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
